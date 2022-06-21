@@ -1,10 +1,15 @@
 import { Alert } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Loader from "../../components/Loader";
 import config from "./config.json";
 import VisitorAPI from "visitorapi";
+import { BreadcrumbContext } from "../../components/Breadcrumb";
+import { AuthContext } from "../../components/FirebaseAuth";
 
 const DemoHome = () => {
+    const title = "Demo Home";
+    const { userData } = useContext(AuthContext);
+    const { setBreadcrumb } = useContext(BreadcrumbContext);
 
     const projectId = config["visitor-api-project-id"];
     const [country, setCountry] = useState("");
@@ -12,6 +17,23 @@ const DemoHome = () => {
     const [error, setError] = useState(false);
 
     useEffect(() => {
+        setBreadcrumb([
+            {
+                to: "/",
+                text: "Home",
+                active: false
+            },
+            {
+                to: "/account/"+userData.currentAccount.id+"/",
+                text: userData.currentAccount.name,
+                active: false
+            },      
+            {
+                to: null,
+                text: title,
+                active: true
+            }
+        ]);
         VisitorAPI(
             projectId,
             (data) => {
@@ -22,7 +44,7 @@ const DemoHome = () => {
                 setError(true); // set error to true to display error alert
                 setLoading(false); // set loading to false to disable <Loader />
             })
-    },[projectId]);
+    },[projectId, userData, setBreadcrumb, title]);
 
     return (
         <>
