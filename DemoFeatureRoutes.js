@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, useRouteMatch } from "react-router-dom";
-import DemoDevice from './device';
-import DemoLocation from './location';
+import DemoDevice from './Device';
+import DemoLocation from './Location';
 
 
 const DemoFeatureRoutes = () => {
