@@ -1,8 +1,9 @@
 import { Alert } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Loader from "../../components/Loader";
 import config from "./config.json";
 import VisitorAPI from "visitorapi";
+import { titleContext } from "../../pages/auth/accounts/Feature";
 
 const DemoLocation = () => {
 
@@ -10,6 +11,14 @@ const DemoLocation = () => {
     const [location, setLocation] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
+
+    const { setTitle } = useContext(titleContext);
+
+    useEffect(() => {
+        setTitle("Demo Location");
+        document.title = "Demo Location";
+    }, [setTitle]);
+
 
     useEffect(() => {
         VisitorAPI(
