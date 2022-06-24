@@ -3,7 +3,6 @@ import { Link, useRouteMatch } from "react-router-dom";
 
 const Demo = () => {
     let match = useRouteMatch();
-    console.log(match.rul);
 
     return (
         <div>
