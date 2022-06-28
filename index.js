@@ -15,11 +15,7 @@ const Demo = () => {
 
     return (
         <div>
-            <div>This is a demo</div>
-            <ul>
-                <li><Link to={`${match.url}location`} >Location</Link></li>
-                <li><Link to={`${match.url}device`} >Device</Link></li>
-            </ul>
+            <h2>This is the main feature.</h2>
         </div>
 
     )

@@ -1,20 +1,20 @@
 import React from 'react';
-import { Route, Switch, useRouteMatch } from "react-router-dom";
+import { Route, Switch, useParams } from "react-router-dom";
 import Demo from '.';
-import DemoDevice from './Device';
-import DemoLocation from './Location';
+import DemoAnother from './Another';
+import DemoSecondary from './Secondary';
 
 
 const DemoFeatureRoutes = () => {
-    let match = useRouteMatch();
+    const { accountId } = useParams();
 
     return (
         <Switch key="demo">
-            <Route path={`${match.path.replace(":path?", "location")}`} >
-                <DemoLocation />
+            <Route path={'/account/'+accountId+'/secondary'}>
+                <DemoSecondary />
             </Route>
-            <Route path={`${match.path.replace(":path?", "device")}`} >
-                <DemoDevice />
+            <Route path={'/account/'+accountId+'/another'} >
+                <DemoAnother />
             </Route>
             <Route>
                 <Demo />

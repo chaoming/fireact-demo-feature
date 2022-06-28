@@ -1,25 +1,31 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { ListItem, ListItemText, ListItemIcon, Divider, Typography } from "@mui/material";
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PeopleIcon from '@mui/icons-material/People';
-import PaymentIcon from '@mui/icons-material/Payment';
+import HomeIcon from '@mui/icons-material/Home';
+import AppsIcon from '@mui/icons-material/Apps';
+import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 
 const DemoFeaturMenu = () => {
     const { accountId } = useParams();
 
     return (
         <>
-            <Link to={'/account/'+accountId+'/location'} style={{textDecoration:'none'}}>
+            <Link to={'/account/'+accountId+'/'} style={{textDecoration:'none'}}>
                 <ListItem button key="Users">
-                    <ListItemIcon><PeopleIcon /></ListItemIcon>
-                    <ListItemText primary={<Typography color="textPrimary">Location</Typography>} />
+                    <ListItemIcon><HomeIcon /></ListItemIcon>
+                    <ListItemText primary={<Typography color="textPrimary">Main Feature</Typography>} />
                 </ListItem>
             </Link>
-            <Link to={'/account/'+accountId+'/device'} style={{textDecoration:'none'}}>
+            <Link to={'/account/'+accountId+'/secondary'} style={{textDecoration:'none'}}>
                 <ListItem button key="Billing">
-                    <ListItemIcon><PaymentIcon /></ListItemIcon>
-                    <ListItemText primary={<Typography color="textPrimary">Device</Typography>} />
+                    <ListItemIcon><AppsIcon /></ListItemIcon>
+                    <ListItemText primary={<Typography color="textPrimary">Secondary Feature</Typography>} />
+                </ListItem>
+            </Link>
+            <Link to={'/account/'+accountId+'/another'} style={{textDecoration:'none'}}>
+                <ListItem button key="Billing">
+                    <ListItemIcon><AutoAwesomeMosaicIcon /></ListItemIcon>
+                    <ListItemText primary={<Typography color="textPrimary">Another Feature</Typography>} />
                 </ListItem>
             </Link>
             <Divider />
