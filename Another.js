@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
-import config from "./config.json";
+import React, { useEffect, useContext } from "react";
 import { titleContext } from "../../pages/auth/accounts/Feature";
 
 const DemoAnother = () => {
