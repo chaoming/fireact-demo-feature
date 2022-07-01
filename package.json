@@ -1,7 +1,7 @@
 {
-    "name": "fireact-demo",
+    "name": "fireact-demo-feature",
     "version": "0.1.0",
     "dependencies": {
-        "visitorapi": "^1.0.2"
+        
     }
 }
