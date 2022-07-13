@@ -5,7 +5,7 @@ import DemoAnother from './Another';
 import DemoSecondary from './Secondary';
 
 
-const DemoFeatureRoutes = () => {
+const FeatureRoutes = () => {
     const { accountId } = useParams();
 
     return (
@@ -23,4 +23,4 @@ const DemoFeatureRoutes = () => {
     )
 }
 
-export default DemoFeatureRoutes;
+export default FeatureRoutes;

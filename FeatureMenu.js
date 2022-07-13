@@ -5,7 +5,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import AppsIcon from '@mui/icons-material/Apps';
 import AutoAwesomeMosaicIcon from '@mui/icons-material/AutoAwesomeMosaic';
 
-const DemoFeaturMenu = () => {
+const FeaturMenu = () => {
     const { accountId } = useParams();
 
     return (
@@ -33,4 +33,4 @@ const DemoFeaturMenu = () => {
     )
 }
 
-export default DemoFeaturMenu;
+export default FeaturMenu;
